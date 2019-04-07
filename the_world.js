@@ -5,7 +5,6 @@
 @help
 ステート431、430のみ
 YEP_BattleEngineCore and YEP_X_VisualStateFX Add-ons
-
 */
 /////////startTurn///////////////////////////////////////////////////////
 BattleManager.startTurn = function() {
