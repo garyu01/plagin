@@ -5,12 +5,14 @@
 @help
 ステート431、430のみ
 YEP_BattleEngineCore and YEP_X_VisualStateFX Add-ons
+詳細はhttp://garyu01.blog.fc2.com/blog-entry-18.html
 */
 /////////startTurn///////////////////////////////////////////////////////
 BattleManager.startTurn = function() {
     this._enteredEndPhase = false;
     this._phase = 'turn';
     this.clearActor();
+//ザ・ワールド使用者のアクターID
  if (!$gameActors.actor(1).isStateAffected(430)) { 
     $gameTroop.increaseTurn();
  }
