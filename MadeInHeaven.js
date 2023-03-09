@@ -200,30 +200,27 @@ BattleManager.actionMove = function(name, actionArgs) {
       }
     }
     return true;
-
 };
-
 }
-
-////////////////////////加速レベル///////////////////////
+	
   Sprite_Animation.prototype.setupRate = function() {
-    if (BattleManager.isMadeInHeaven() && $gameVariables.value(2) == 6) {
-       this._rate = 3;
-
-    }
-    if (BattleManager.isMadeInHeaven() && $gameVariables.value(2).clamp(4,5) == $gameVariables.value(2)) {
-       this._rate = 2;
-
-    }
-    if (BattleManager.isMadeInHeaven() && $gameVariables.value(2).clamp(1,3) == $gameVariables.value(2)) {
+    if (BattleManager.isMadeInHeaven()) {
        this._rate = 1;
-
-    }
-
-
-  };
-////////////////////////////////////////////////////////
-
+  }
+/////////////加速レベルを設定する場合はこっちを使用///////////////////////
+  //Sprite_Animation.prototype.setupRate = function() {
+  //  if (BattleManager.isMadeInHeaven() && $gameVariables.value(2) == 6) {
+  //     this._rate = 3;
+  //  }
+  //  if (BattleManager.isMadeInHeaven() && $gameVariables.value(2).clamp(4,5) == $gameVariables.value(2)) {
+  //     this._rate = 2;
+  //
+  //  }
+  //  if (BattleManager.isMadeInHeaven() && $gameVariables.value(2).clamp(1,3) == $gameVariables.value(2)) {
+  //     this._rate = 1;
+  //  }
+  //};
+/////////////////////////////////////////////////////////////////
 	var Spriteset_Battle_isBusy = Spriteset_Battle.prototype.isBusy;
 	Spriteset_Battle.prototype.isBusy = function() {
 	     if (BattleManager.isMadeInHeaven()){
