@@ -206,7 +206,8 @@ BattleManager.actionMove = function(name, actionArgs) {
   Sprite_Animation.prototype.setupRate = function() {
     if (BattleManager.isMadeInHeaven()) {
        this._rate = 1;
-  }
+    }
+  };  
 /////////////加速レベルを設定する場合はこっちを使用///////////////////////
   //Sprite_Animation.prototype.setupRate = function() {
   //  if (BattleManager.isMadeInHeaven() && $gameVariables.value(2) == 6) {
