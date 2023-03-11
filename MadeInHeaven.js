@@ -1,4 +1,4 @@
-﻿//=============================================================================
+//=============================================================================
 // MadeInHeaven.js
 //=============================================================================
 
@@ -200,28 +200,38 @@ BattleManager.actionMove = function(name, actionArgs) {
       }
     }
     return true;
+
 };
+
 }
-	
+  var Sprite_Animation_setupRate = Sprite_Animation.prototype.setupRate;
   Sprite_Animation.prototype.setupRate = function() {
     if (BattleManager.isMadeInHeaven()) {
        this._rate = 1;
+    }else{
+	 Sprite_Animation_setupRate.call(this);
     }
-  };  
-/////////////加速レベルを設定する場合はこっちを使用///////////////////////
+  };
+
+  ///////////ゲーム内変数でアニメーション速度を変更///////////////
+  //var Sprite_Animation_setupRate = Sprite_Animation.prototype.setupRate;
   //Sprite_Animation.prototype.setupRate = function() {
-  //  if (BattleManager.isMadeInHeaven() && $gameVariables.value(2) == 6) {
+  //  if (BattleManager.isMadeInHeaven()) {
+  //    if ($gameVariables.value(2)) == 6
   //     this._rate = 3;
-  //  }
-  //  if (BattleManager.isMadeInHeaven() && $gameVariables.value(2).clamp(4,5) == $gameVariables.value(2)) {
+  //    }
+  //    if ($gameVariables.value(2).clamp(4,5) == $gameVariables.value(2)) {
   //     this._rate = 2;
-  //
-  //  }
-  //  if (BattleManager.isMadeInHeaven() && $gameVariables.value(2).clamp(1,3) == $gameVariables.value(2)) {
+  //    }
+  //    if ($gameVariables.value(2).clamp(1,3) == $gameVariables.value(2)) {
   //     this._rate = 1;
+  //    }
+  //  }else{
+  //     Sprite_Animation_setupRate.call(this);
   //  }
   //};
-/////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////
+
 	var Spriteset_Battle_isBusy = Spriteset_Battle.prototype.isBusy;
 	Spriteset_Battle.prototype.isBusy = function() {
 	     if (BattleManager.isMadeInHeaven()){
@@ -230,7 +240,5 @@ BattleManager.actionMove = function(name, actionArgs) {
     	         return Spriteset_Battle_isBusy.call(this);
 	     }
 	};
-
-
 
 })();
