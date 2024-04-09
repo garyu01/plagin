@@ -1,3 +1,67 @@
+/*:
+ * @target MZ
+ * @plugindesc ステートを付与した敵1体とアクターの間に線を描画
+ *
+ * @command SetLineProperties
+ * @text Set Line Properties
+ * @desc Sets the properties of the line to be drawn between characters.
+ *
+ * @arg color
+ * @text Line Color
+ * @desc The color of the line (hexadecimal, e.g., #FF0000 for red).
+ * @type string
+ * @default #FF0000
+ *
+ * @arg width
+ * @text Line Width
+ * @desc The width of the line.
+ * @type number
+ * @min 1
+ * @default 2
+ * 
+ * @arg alpha
+ * @text Line Alpha
+ * @desc The alpha (transparency) of the line (0.0 - fully transparent, 1.0 - fully opaque).
+ * @type number
+ * @decimals 2
+ * @min 0
+ * @max 1
+ * @default 1.0
+ *
+ * @arg offsetXStart
+ * @text Start X Offset
+ * @desc The X offset for the start of the line.
+ * @type number
+ * @default -40
+ *
+ * @arg offsetYStart
+ * @text Start Y Offset
+ * @desc The Y offset for the start of the line.
+ * @type number
+ * @default 1
+ *
+ * @arg offsetXEnd
+ * @text End X Offset
+ * @desc The X offset for the end of the line.
+ * @type number
+ * @default -1
+ *
+ * @arg offsetYEnd
+ * @text End Y Offset
+ * @desc The Y offset for the end of the line.
+ * @type number
+ * @default -55
+ *
+ * @command SetStateForLine
+ * @text Set State for Line
+ * @desc Sets the state ID that triggers line drawing between characters.
+ *
+ * @arg stateId
+ * @text State ID
+ * @desc The ID of the state that triggers line drawing.
+ * @type number
+ * @default 1
+ */
 var DotSight = DotSight || {}; 
 DotSight.Line = DotSight.Line || {};
 (function($) {
