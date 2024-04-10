@@ -1,6 +1,6 @@
 ﻿/*:
  * @target MZ
- * @plugindesc 特定の条件でMISSアニメーションを表示するプラグイン
+ * @plugindesc 攻撃がミスったときにMISSアニメーションを表示する
  *
  * @param TriggerWeapons
  * @text トリガー武器ID
